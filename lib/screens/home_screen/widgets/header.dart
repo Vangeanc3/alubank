@@ -1,6 +1,5 @@
+import 'package:alubank/themes/theme_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -8,18 +7,14 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(10),
         ),
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: <Color>[
-            Color.fromRGBO(103, 99, 234, 1),
-            Color.fromRGBO(155, 105, 254, 1),
-            Color.fromRGBO(195, 107, 255, 1)
-          ],
+          colors: ThemeColors.headerGradient,
         ),
       ),
       child: Padding(
@@ -33,28 +28,22 @@ class Header extends StatelessWidget {
                 Text.rich(
                   TextSpan(
                     text: "\$",
-                    style: TextStyle(color: Colors.white),
                     children: <TextSpan>[
                       TextSpan(
                         text: "1000.0",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 26,
-                        ),
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ],
                   ),
                 ),
-                Text(
+                const Text(
                   "Balanço disponivel",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
                 )
               ],
             ),
-            Icon(
+            const Icon(
               Icons.account_circle,
-              size: 35,
-              color: Colors.white,
+              size: 42,
             ),
           ],
         ),

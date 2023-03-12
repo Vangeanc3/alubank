@@ -1,7 +1,8 @@
+import 'package:alubank/components/box_card.dart';
+import 'package:alubank/screens/home_screen/widgets/account_action.dart';
 import 'package:alubank/screens/home_screen/widgets/header.dart';
+import 'package:alubank/screens/home_screen/widgets/recent_active.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,9 +11,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: <Widget>[
-          Header(),
-        ],
+        children: const <Widget>[Header(), RecentActive(), AccountAction()],
       ),
     );
   }
